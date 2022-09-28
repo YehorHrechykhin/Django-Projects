@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>All users</h1>
+<ul class="list-articles">
+    {% for user_info in users %}
+    <li>
+        <div class="alert alert-warning mt-2">
+
+            <div class="article-panel">
+                <p class="first"><a href="{{ user_info.get_absolute_url }}">Login: {{ user_info.email }}</a></p>
+                <p class="last">Created at: {{ user_info.created_at|date:'d-m-Y' }}</p>
+            </div>
+            <div>
+                <p><small><em>First name: </em></small><strong>{{ user_info.first_name }}</strong></p>
+                <p><small><em>Middle name: </em></small><strong>{{ user_info.middle_name }}</strong></p>
+                <p><small><em>Last name: </em></small><strong>{{ user_info.last_name }} </strong></p>
+            </div>
+            <div class="article-panel">
+                <p class="last">Updated at: {{ user_info.updated_at|date:'d-m-Y' }}</p>
+            </div>
+        </div>
+        <div class="btn-group-sm">
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

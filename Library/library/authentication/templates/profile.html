@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Profile of user: {{user_info.email}}</h1>
+<ul class="list-articles">
+    <li>
+        <div class="alert alert-warning mt-2">
+            <div class="article-panel">
+                <div class="article-panel">
+                    <p class="first">Login: {{ user_info.email }}</p>
+                </div>
+                <div>
+                    <p><small><em>Full
+                        name: </em></small><strong>{{ user_info.first_name }} {{ user_info.middle_name }} {{ user_info.last_name }} </strong>
+                    </p>
+                    <p><small><em>Email: </em></small>{{ user_info.email }}</p>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+{% endblock %}
+</body>
+</html>
